@@ -4,7 +4,7 @@
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| email              | string     | null: false                    |
+| email              | string     | unique: true                    |
 | encrypted_password | string     | null: false                    |
 | nickname           | string     | null: false                    |
 | first_name         | string     | null: false                    |
@@ -22,7 +22,8 @@
 
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
-| user_id   | references | foreign_key: true              |
+| user      | references | foreign_key: true              |
+| goods     | references | foreign_key: true              |
 | name      | string     | null: false                    |
 
 ### Association
@@ -36,10 +37,11 @@
 | Column        | Type          | Options                        |
 | ------------- | ------------- | ------------------------------ |
 | address       | string        | foreign_key: true              |
-| city          | string        | null: false                    |
+| city_id       | integer       | null: false                    |
 | municipality  | text          | null: false                    |
 | street        | string        | null: false                    |
 | number        | string        | null: false                    |
+| v	building    | stirng        |                                |
 
 
 ### Association
