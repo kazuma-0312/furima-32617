@@ -4,7 +4,7 @@
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| email              | string     | null: false                    |
+| email              | string     | unique: true                   |
 | encrypted_password | string     | null: false                    |
 | nickname           | string     | null: false                    |
 | first_name         | string     | null: false                    |
@@ -41,7 +41,7 @@
 | street        | string        | null: false                    |
 | number        | string        | null: false                    |
 | building      | string        |                                |
-| buys          | references    | foreign_key: true              |
+| buy           | references    | foreign_key: true              |
 
 
 ### Association
