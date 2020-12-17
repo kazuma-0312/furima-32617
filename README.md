@@ -35,12 +35,13 @@
 
 | Column        | Type          | Options                        |
 | ------------- | ------------- | ------------------------------ |
-| address       | string        | foreign_key: true              |
+| address       | string        | null: false                    |
 | city_id       | integer       | null: false                    |
-| municipality  | text          | null: false                    |
+| municipality  | string        | null: false                    |
 | street        | string        | null: false                    |
 | number        | string        | null: false                    |
 | building      | string        |                                |
+| buys          | references    | foreign_key: true              |
 
 
 ### Association
@@ -53,7 +54,6 @@
 | Column       | Type              | Options                        |
 | ------------ | ----------------- | ------------------------------ |
 | name         | string            | null: false                    |
-| image        | string            | null: false                    |
 | text         | text              | null: false                    |
 | category_id  | integer           | null: false                    |
 | delivery_id  | integer           | null: false                    |
