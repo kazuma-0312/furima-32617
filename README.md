@@ -36,7 +36,7 @@
 | Column        | Type          | Options                        |
 | ------------- | ------------- | ------------------------------ |
 | address       | string        | foreign_key: true              |
-| city          | ActiveStorage | null: false                    |
+| city          | string        | null: false                    |
 | municipality  | text          | null: false                    |
 | street        | string        | null: false                    |
 | number        | string        | null: false                    |
@@ -52,15 +52,15 @@
 | Column       | Type              | Options                        |
 | ------------ | ----------------- | ------------------------------ |
 | name         | string            | null: false                    |
-| image        | ActiveStorage     | null: false                    |
+| image        | string            | null: false                    |
 | text         | text              | null: false                    |
 | category_id  | integer           | null: false                    |
 | delivery_id  | integer           | null: false                    |
 | status_id    | integer           | null: false                    |
-| area_id      | integer           | null: false                    |
+| city_id      | integer           | null: false                    |
 | days_id      | integer           | null: false                    |
 | price        | integer           | null: false                    |
-| user_id      | references        | null: false                    |
+| user_id      | references        | foreign_key: true              |
 
 ##　Association
 - has_one :buys
