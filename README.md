@@ -1,24 +1,62 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Usersテーブル
 
-Things you may want to cover:
+| Column        | Type       | Options                        |
+| ------------- | ---------- | ------------------------------ |
+| email         | string     | null: false                    |
+| password      | string     | null: false                    |
+| nickname      | string     | null: false                    |
 
-* Ruby version
 
-* System dependencies
+### Association
+- has_many :buys
+- has_many :goods
 
-* Configuration
 
-* Database creation
+## buysテーブル
 
-* Database initialization
+| Column    | Type       | Options                        |
+| --------- | ---------- | ------------------------------ |
+| user_id   | references | foreign_key: true              |
+| name      | string     | null: false                    |
 
-* How to run the test suite
+### Association
+- belongs_to :user
+- belongs_to :goods
+- has_one :homes
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+## homesテーブル
 
-* ...
+| Column        | Type          | Options                        |
+| ------------- | ------------- | ------------------------------ |
+| address       | string        | foreign_key: true              |
+| city          | ActiveStorage | null: false                    |
+| municipality  | text          | null: false                    |
+| street        | string        | null: false                    |
+| number        | string        | null: false                    |
+
+
+### Association
+- belongs_to :buys
+
+
+
+## goodsテーブル
+
+| Column    | Type          | Options                        |
+| --------- | ------------- | ------------------------------ |
+| name      | string        | foreign_key: true              |
+| image     | ActiveStorage | null: false                    |
+| text      | text          | null: false                    |
+| category  | string        | null: false                    |
+| delivery  | string        | null: false                    |
+| area      | string        | null: false                    |
+| days      | date          | null: false                    |
+| price     | string        | null: false                    |
+| user_id   | references    | null: false                    |
+
+##　Association
+- has_one :buys
+- belongs_to :user
