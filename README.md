@@ -24,12 +24,11 @@
 | --------- | ---------- | ------------------------------ |
 | user      | references | foreign_key: true              |
 | goods     | references | foreign_key: true              |
-| name      | string     | null: false                    |
 
 ### Association
 - belongs_to :user
 - belongs_to :goods
-- has_one :homes
+- has_one :home
 
 
 ## homesテーブル
@@ -41,11 +40,11 @@
 | municipality  | text          | null: false                    |
 | street        | string        | null: false                    |
 | number        | string        | null: false                    |
-| v	building    | stirng        |                                |
+| building      | string        |                                |
 
 
 ### Association
-- belongs_to :buys
+- belongs_to :buy
 
 
 
@@ -62,8 +61,8 @@
 | city_id      | integer           | null: false                    |
 | days_id      | integer           | null: false                    |
 | price        | integer           | null: false                    |
-| user_id      | references        | foreign_key: true              |
+| user         | references        | foreign_key: true              |
 
 ##　Association
-- has_one :buys
+- has_one :buy
 - belongs_to :user
