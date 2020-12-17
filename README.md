@@ -4,7 +4,7 @@
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| email              | string     | unique: true                    |
+| email              | string     | null: false                    |
 | encrypted_password | string     | null: false                    |
 | nickname           | string     | null: false                    |
 | first_name         | string     | null: false                    |
@@ -15,7 +15,7 @@
 
 ### Association
 - has_many :buys
-- has_many :goods
+- has_many :items
 
 
 ## buysテーブル
@@ -23,11 +23,11 @@
 | Column    | Type       | Options                        |
 | --------- | ---------- | ------------------------------ |
 | user      | references | foreign_key: true              |
-| goods     | references | foreign_key: true              |
+| item      | references | foreign_key: true              |
 
 ### Association
 - belongs_to :user
-- belongs_to :goods
+- belongs_to :item
 - has_one :home
 
 
@@ -49,7 +49,7 @@
 
 
 
-## goodsテーブル
+## itemsテーブル
 
 | Column       | Type              | Options                        |
 | ------------ | ----------------- | ------------------------------ |
