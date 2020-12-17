@@ -2,12 +2,16 @@
 
 ## Usersテーブル
 
-| Column        | Type       | Options                        |
-| ------------- | ---------- | ------------------------------ |
-| email         | string     | null: false                    |
-| password      | string     | null: false                    |
-| nickname      | string     | null: false                    |
-
+| Column             | Type       | Options                        |
+| ------------------ | ---------- | ------------------------------ |
+| email              | string     | null: false                    |
+| encrypted_password | string     | null: false                    |
+| nickname           | string     | null: false                    |
+| first_name         | string     | null: false                    |
+| last_name          | string     | null: false                    |
+| last_name_kana     | string     | null: false                    |
+| first_name_kana    | string     | null: false                    |
+| birthday           | date       | nul : false                    |
 
 ### Association
 - has_many :buys
@@ -45,17 +49,18 @@
 
 ## goodsテーブル
 
-| Column    | Type          | Options                        |
-| --------- | ------------- | ------------------------------ |
-| name      | string        | foreign_key: true              |
-| image     | ActiveStorage | null: false                    |
-| text      | text          | null: false                    |
-| category  | string        | null: false                    |
-| delivery  | string        | null: false                    |
-| area      | string        | null: false                    |
-| days      | date          | null: false                    |
-| price     | string        | null: false                    |
-| user_id   | references    | null: false                    |
+| Column       | Type              | Options                        |
+| ------------ | ----------------- | ------------------------------ |
+| name         | string            | null: false                    |
+| image        | ActiveStorage     | null: false                    |
+| text         | text              | null: false                    |
+| category_id  | integer           | null: false                    |
+| delivery_id  | integer           | null: false                    |
+| status_id    | integer           | null: false                    |
+| area_id      | integer           | null: false                    |
+| days_id      | integer           | null: false                    |
+| price        | integer           | null: false                    |
+| user_id      | references        | null: false                    |
 
 ##　Association
 - has_one :buys
