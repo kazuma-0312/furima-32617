@@ -63,6 +63,6 @@
 | price        | integer           | null: false                    |
 | user         | references        | foreign_key: true              |
 
-##　Association
+## Association
 - has_one :buy
 - belongs_to :user
