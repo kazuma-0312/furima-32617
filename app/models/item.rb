@@ -16,6 +16,10 @@ class Item < ApplicationRecord
     validates :price    
   end
 
+  validates :price, numericality: {
+    greater_than_or_equal_to: 300,
+    less_than_or_equal_to: 9,999,999
+  }  
 
   validates :category_id, :delivery_id, :status_id, :city_id, :days_id, numericality: { other_than: 1 } 
 
