@@ -91,7 +91,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price Half-width number")
       end
       it "価格が300~99,999,999を超えているなら出品できない" do
-        @item.price = 99_999_999
+        @item.price = 10_000_000
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
       end  
