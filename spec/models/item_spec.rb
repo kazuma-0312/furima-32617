@@ -86,11 +86,11 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
       it "価格が半角以外なら出品できない" do
-        @item.price = １１１
+        @item.price = "１１１"
         @item.valid?
         expect(@item.errors.full_messages).to include("Price Half-width number")
       end
-      it "価格が300~9999999を超えているなら出品できない" do
+      it "価格が300~99,999,999を超えているなら出品できない" do
         @item.price = 99_999_999
         @item.valid?
         expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
