@@ -22,7 +22,7 @@ class Item < ApplicationRecord
   }  
 
   validates :price, numericality: {
-    with: /\A[0-9]+\z/
+    with: /\A[0-9]+\z/, message: "Half-width number"
   }
 
   validates :category_id, :delivery_id, :status_id, :city_id, :days_id, numericality: { other_than: 1 } 
