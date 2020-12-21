@@ -1,4 +1,10 @@
-class Item < ApplicationRecor
+class Item < ApplicationRecord
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to_active_hash :category
+  belongs_to_active_hash :delivery
+  belongs_to_active_hash :status
+  belongs_to_active_hash :city
+  belongs_to_active_hash :days
 
   has_one_attached :image
   belongs_to :user
@@ -13,10 +19,4 @@ class Item < ApplicationRecor
 
   validates :category_id, :delivery_id, :status_id, :city_id, :days_id, numericality: { other_than: 1 } 
 
-  extend ActiveHash::Associations::ActiveRecordExtensions
-  belongs_to :category
-  belongs_to :delivery
-  belongs_to :status
-  belongs_to :city
-  belongs_to :days
 end
