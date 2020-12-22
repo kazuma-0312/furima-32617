@@ -16,7 +16,11 @@ before_action :authenticate_user!, only: [:new, :create]
     else
       render :new  
     end
-  end
+  end  
+
+    def show
+      @item = Item.find(params[:id])
+    end
 
 
   private
