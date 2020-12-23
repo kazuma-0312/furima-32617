@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
 before_action :authenticate_user!, except: [:index, :show]
-before_action :group_item, only: [:show, :edit, :update]
+before_action :group_item, only: [:show, :edit, :update, :destroy]
 
   def index
   @items = Item.order("created_at DESC")
@@ -36,12 +36,11 @@ before_action :group_item, only: [:show, :edit, :update]
   end
 
   def destroy
-    item = Item.find(params[:id])
-    if current_user.id == item.user_id
-      item.destroy
+    current_user.id == @item.user_id
+    if @item.destroy
       redirect_to root_path
     else  
-      render :show
+      render :show,   alert: 'Failed to delete'
     end
   end
 
