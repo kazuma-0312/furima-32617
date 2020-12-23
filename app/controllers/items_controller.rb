@@ -37,7 +37,8 @@ before_action :group_item, only: [:show, :edit, :update]
 
   def destroy
     item = Item.find(params[:id])
-    if item.destroy
+    if current_user.id == item.user_id
+      item.destroy
       redirect_to root_path
     else  
       render :show
