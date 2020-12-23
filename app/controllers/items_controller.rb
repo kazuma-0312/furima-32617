@@ -36,12 +36,14 @@ before_action :group_item, only: [:show, :edit, :update, :destroy]
   end
 
   def destroy
-    current_user.id == @item.user_id
-    if @item.destroy
+    if current_user.id == @item.user_id
+      if @item.destroy
+        redirect_to root_path
+      else  
+        render :show,   alert: 'Failed to delete'
+      end
       redirect_to root_path
-    else  
-      render :show,   alert: 'Failed to delete'
-    end
+    end  
   end
 
 
