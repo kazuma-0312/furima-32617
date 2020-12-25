@@ -1,0 +1,2 @@
+class HomeBuy < ApplicationRecord
+end
