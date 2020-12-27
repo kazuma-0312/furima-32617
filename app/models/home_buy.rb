@@ -1,6 +1,6 @@
 class HomeBuy
   include ActiveModel::Model
-  attr_accessor :user_id, :item_id, :address, :city_id, :municipality, :street, :building
+  attr_accessor :user_id, :item_id, :address, :city_id, :municipality, :street, :building, :number
 
   with_options presence: true do
     validates :address, format: { with: /\A\d{3}-\d{4}\z/, message: "code Input correctly" }
