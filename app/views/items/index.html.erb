@@ -126,7 +126,7 @@
     <%= link_to '新規投稿商品', "#", class: "subtitle" %>
     <ul class='item-lists'>
 
-  <% if @items[0] != nil%>
+  <% if @items.present?%>
     <% @items.each do |item| %>
       <li class='list'>
         <%= link_to item_path(item.id) do %>
@@ -135,9 +135,11 @@
          
 
           <%# 商品が売れていればsold outを表示しましょう %>
+          <% if item.buy %>
           <div class='sold-out'>
             <span>Sold Out!!</span>
           </div>
+          <% end %>
           <%# //商品が売れていればsold outを表示しましょう %>
 
         </div>
