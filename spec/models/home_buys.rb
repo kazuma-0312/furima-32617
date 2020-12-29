@@ -51,8 +51,13 @@ RSpec.describe HomeBuy, type: :model do
         @home_buy.valid?
         expect(@home_buy.errors.full_messages).to include("Number Input only number")
       end
+      it "numberが英数（ハイフンと数字の組み合わせ）混合の場合でも登録が出来ない" do
+        @home_buy.number = "１１１ー１１１１ー１１１１"
+        @home_buy.valid?
+        expect(@home_buy.errors.full_messages).to include("Number Input only number")
+      end
       it "numberが12文字なら購入できない" do
-        @home_buy.number = '111111111111'
+        @home_buy.number = "111111111111"
         @home_buy.valid?
         expect(@home_buy.errors.full_messages).to include("Number Input only number")
       end
