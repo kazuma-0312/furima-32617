@@ -30,3 +30,7 @@
 yarn-debug.log*
 .yarn-integrity
 .Ds_Store
+test/fixtures/files/.keep
+test/fixtures/.keep
+test/application_system_test_case.rb
+test/models/user_test.rb
