@@ -3,10 +3,10 @@
 lock '~> 3.1'
 
 # Capistranoのログの表示に利用する
-set :application, "furima-32617"
+set :application, 'furima-32617'
 
 # どのリポジトリからアプリをpullするかを指定する
-set :repo_url, "git@github.com:kazuma-0312/furima-0312.git"
+set :repo_url, 'git@github.com:kazuma-0312/furima-32617.git'
 
 # バージョンが変わっても共通で参照するディレクトリを指定
 set :linked_dirs, fetch(:linked_dirs, []).push('log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', 'public/system', 'public/uploads')
