@@ -2,8 +2,8 @@ class BuysController < ApplicationController
   before_action :authenticate_user!, only: [:index]
   before_action :group_item, only: [:index, :create]
   def index
-    redirect_to root_path if current_user.id == @item.user_id || @item.buy
     @home_buy = HomeBuy.new
+    redirect_to root_path if current_user.id == @item.user_id || @item.buy != nil
   end
 
   def create
