@@ -25,7 +25,7 @@ class BuysController < ApplicationController
   end
 
   def home_buy_params
-    params.require(:home_buy).permit(:address, :city_id, :municipality, :street, :building, :number).merge(item_id: params[:item_id], user_id: current_user.id, token: params[:token])
+    params.require(:home_buy).permit(:address, :city_id, :municipality, :street, :building, :tell_number).merge(item_id: params[:item_id], user_id: current_user.id, token: params[:token])
   end
 
   def pay_item
