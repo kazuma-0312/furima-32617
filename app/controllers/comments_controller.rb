@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @item = Item.find(params[:item_id])
     @comment = Comment.new(comment_params)
     if @comment.save
+      ActionCable.server.broadcast 'message_channel', content: @comment
       redirect_to item_path(@item)
     else
       flash.now[:alert] = 'コメントを入力してください'
