@@ -20,6 +20,8 @@ before_action :group_item, only: [:show, :edit, :update, :destroy]
   end  
 
   def show
+    @comment = Comment.new
+    @comments = @item.comments.order(created_at: :desc)
   end
 
   def edit
